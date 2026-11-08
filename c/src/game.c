@@ -32,7 +32,7 @@ void gameLoop(GameVar* gameVar) {
     BeginDrawing();
     BeginMode2D(gameVar->camera);
     ClearBackground(RAYWHITE);
-    DrawRectangle(0, 0, 80, 80, PINK);
+    
     EndMode2D();
     EndDrawing();
 

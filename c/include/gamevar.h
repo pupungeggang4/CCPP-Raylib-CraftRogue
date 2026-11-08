@@ -6,6 +6,7 @@
 struct GameVar {
     Camera2D camera;
     int running;
+    int scene;
 };
 
 extern GameVar gameVar;
