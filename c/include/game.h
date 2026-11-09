@@ -5,6 +5,7 @@
 
 void gameInit(GameVar*);
 void gameLoop(GameVar*);
+void gameInputHandle(GameVar*);
 void gameEnd(GameVar*);
 
 #endif

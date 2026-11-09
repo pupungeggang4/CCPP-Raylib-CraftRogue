@@ -4,9 +4,9 @@
 #include "includes.h"
 
 struct GameVar {
-    Camera2D camera;
+    Camera2D camera; float dt;
     int running;
-    int scene;
+    int scene; int sceneNext;
 };
 
 extern GameVar gameVar;
