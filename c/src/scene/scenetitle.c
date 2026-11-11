@@ -31,6 +31,8 @@ void sceneTitleKeyHandle(GameVar* gameVar) {
 
 void sceneTitleMouseHandle(GameVar* gameVar, Vector2 pos, int button) {
     if (button == LEFT) {
+        if (utilPointInsideRectUI(pos, uiTitle.buttonAdventure)) gameVar->sceneNext = SELECT;
+        if (utilPointInsideRectUI(pos, uiTitle.buttonSurvival)) gameVar->sceneNext = FIELD;
         if (utilPointInsideRectUI(pos, uiTitle.buttonQuit)) gameVar->running = 0;
     }
 }

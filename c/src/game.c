@@ -30,17 +30,23 @@ void gameLoop(GameVar* gameVar) {
 
     gameInputHandle(gameVar);
     if (gameVar->scene == TITLE) sceneTitleUpdate(gameVar);
+    else if (gameVar->scene == SELECT) sceneSelectUpdate(gameVar);
+    else if (gameVar->scene == FIELD) sceneFieldUpdate(gameVar);
 
     BeginDrawing();
     BeginMode2D(gameVar->camera);
     ClearBackground(RAYWHITE); 
     if (gameVar->scene == TITLE) sceneTitleRender(gameVar);
+    else if (gameVar->scene == SELECT) sceneSelectRender(gameVar);
+    else if (gameVar->scene == FIELD) sceneFieldRender(gameVar);
     EndMode2D();
     EndDrawing();
 
     if (gameVar->sceneNext != -1) {
         gameVar->scene = gameVar->sceneNext;
         if (gameVar->scene == TITLE) sceneTitleReady(gameVar);
+        else if (gameVar->scene == SELECT) sceneSelectReady(gameVar);
+        else if (gameVar->scene == FIELD) sceneFieldReady(gameVar);
         gameVar->sceneNext = -1;
     }
 
@@ -53,14 +59,21 @@ void gameInputHandle(GameVar* gameVar) {
         pos = Vector2Scale(pos, 1 / gameVar->camera.zoom);
         printf("(%.0f, %.0f)\n", pos.x, pos.y);
         if (gameVar->scene == TITLE) sceneTitleMouseHandle(gameVar, pos, LEFT);
+        else if (gameVar->scene == SELECT) sceneSelectMouseHandle(gameVar, pos, LEFT);
+        else if (gameVar->scene == FIELD) sceneFieldMouseHandle(gameVar, pos, LEFT);
+
     } else if (IsMouseButtonReleased(MOUSE_BUTTON_RIGHT)) {
         Vector2 pos = GetMousePosition();
         pos = Vector2Scale(pos, 1 / gameVar->camera.zoom);
         printf("(%.0f, %.0f)\n", pos.x, pos.y);
         if (gameVar->scene == TITLE) sceneTitleMouseHandle(gameVar, pos, RIGHT);
+        else if (gameVar->scene == SELECT) sceneSelectMouseHandle(gameVar, pos, RIGHT);
+        else if (gameVar->scene == FIELD) sceneFieldMouseHandle(gameVar, pos, RIGHT);
     }
 
     if (gameVar->scene == TITLE) sceneTitleKeyHandle(gameVar);
+    else if (gameVar->scene == SELECT) sceneSelectKeyHandle(gameVar);
+    else if (gameVar->scene == FIELD) sceneFieldKeyHandle(gameVar);
 }
 
 void gameEnd(GameVar* gameVar) {
