@@ -13,14 +13,26 @@ struct UITitle {
     int textLoad[4];
     int buttonQuit[4];
     int textQuit[4];
+    int arrow[6];
 };
 
 struct UIField {
-
+    int textTutorial[4];
+    int buttonMenu[4];
 };
 
 struct UIMenu {
-
+    int rect[4];
+    int textPaused[4];
+    int buttonResume[4];
+    int textResume[4];
+    int buttonGiveUp[4];
+    int textGiveUp[4];
+    int buttonSave[4];
+    int textSave[4];
+    int buttonQuit[4];
+    int textQuit[4];
+    int arrow[6];
 };
 
 extern UITitle uiTitle;

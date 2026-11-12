@@ -11,7 +11,9 @@
 enum SceneName {TITLE, SELECT, FIELD};
 enum State {NORMAL, INVENTORY, SELECT_FILE, SELECT_CHARACTER};
 enum Direction {LEFT, RIGHT, UP, DOWN};
+enum TextureIndex {T_ARROW};
 
+typedef struct Asset Asset;
 typedef struct GameVar GameVar;
 typedef struct UITitle UITitle;
 typedef struct UIField UIField;

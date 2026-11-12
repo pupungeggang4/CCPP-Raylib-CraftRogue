@@ -6,7 +6,9 @@
 struct GameVar {
     Camera2D camera; float dt;
     int running;
-    int scene; int sceneNext;
+    int scene; int sceneNext; int menu;
+
+    int selectedTitle; int selectedMenu;
 };
 
 extern GameVar gameVar;
