@@ -26,7 +26,7 @@ void sceneMenuRender(GameVar* gameVar) {
     drawRect(uiMenu.buttonQuit, YELLOW);
     drawText("Quit Game", uiMenu.textQuit, 20, BLACK);
 
-    int pos[2] = {uiMenu.arrow[0], uiMenu.arrow[1] + uiMenu.arrow[5] * gameVar->selectedMenu};
+    int pos[2] = {uiMenu.arrow[0], uiMenu.arrow[1] + uiMenu.arrow[3] * gameVar->selectedMenu};
     drawTexture(asset.texture[T_ARROW], pos);
 }
 
@@ -35,14 +35,24 @@ void sceneMenuKeyHandle(GameVar* gameVar) {
     else if (IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN)) gameVar->selectedMenu = (gameVar->selectedMenu + 1) % 4;
     else if (IsKeyPressed(KEY_ENTER)) {
         if (gameVar->selectedMenu == 0) gameVar->menu = 0;
-        else if (gameVar->selectedMenu == 1) gameVar->sceneNext = TITLE;
-        else if (gameVar->selectedMenu == 2) gameVar->sceneNext = TITLE;
-        else if (gameVar->selectedMenu == 3) gameVar->running = 0;
+        else if (gameVar->selectedMenu == 1) {
+            gameVar->sceneNext = TITLE;
+        } else if (gameVar->selectedMenu == 2) {
+            gameVar->sceneNext = TITLE;
+        } else if (gameVar->selectedMenu == 3) gameVar->running = 0;
     }
 }
 
 void sceneMenuMouseHandle(GameVar* gameVar, Vector2 pos, int button) {
     if (button == LEFT) {
-
+        if (utilPointInsideRectUI(pos, uiMenu.buttonResume)) {
+            gameVar->menu = 0;
+        } else if (utilPointInsideRectUI(pos, uiMenu.buttonGiveUp)) {
+            gameVar->sceneNext = TITLE;
+        } else if (utilPointInsideRectUI(pos, uiMenu.buttonSave)) {
+            gameVar->sceneNext = TITLE;
+        } else if (utilPointInsideRectUI(pos, uiMenu.buttonQuit)) {
+            gameVar->running = 0;
+        }
     }
 }

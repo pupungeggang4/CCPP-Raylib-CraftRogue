@@ -16,6 +16,16 @@ struct UITitle {
     int arrow[6];
 };
 
+struct UISelect {
+    int textTitle[4];
+    int buttonBack[4];
+    int buttonRect[4];
+    int buttons[6];
+    int textbutton[6];
+    int buttonNew[4];
+    int buttonDelete[4];
+};
+
 struct UIField {
     int textTutorial[4];
     int buttonMenu[4];
@@ -36,7 +46,8 @@ struct UIMenu {
 };
 
 extern UITitle uiTitle;
-extern UIField uiEdit;
+extern UISelect uiSelect;
+extern UIField uiField;
 extern UIMenu uiMenu;
 
 #endif

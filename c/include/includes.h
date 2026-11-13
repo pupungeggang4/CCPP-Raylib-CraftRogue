@@ -9,13 +9,13 @@
 #include <raymath.h>
 
 enum SceneName {TITLE, SELECT, FIELD};
-enum State {NORMAL, INVENTORY, SELECT_FILE, SELECT_CHARACTER};
+enum State {NORMAL, INVENTORY, SELECT_WORLD, SELECT_CHARACTER, NEW_WORLD, NEW_CHARACTER};
 enum Direction {LEFT, RIGHT, UP, DOWN};
-enum TextureIndex {T_ARROW};
 
 typedef struct Asset Asset;
 typedef struct GameVar GameVar;
 typedef struct UITitle UITitle;
+typedef struct UISelect UISelect;
 typedef struct UIField UIField;
 typedef struct UIMenu UIMenu;
 

@@ -10,11 +10,22 @@ UITitle uiTitle = {
     {180, 340}, // textLoad
     {160, 400, 480, 80}, // buttonQuit
     {180, 420}, // textQuit
-    {80, 160, 80, 80, 0, 80}, // arrow
+    {80, 160, 0, 80, 80, 80}, // arrow
+};
+
+UISelect uiSelect = {
+    {20, 20}, // textTitle
+    {740, 20, 40, 40}, // buttonBack
+    {80, 80, 640, 400}, // buttonRect
+    {80, 80, 0, 80, 640, 80}, // buttons
+    {100, 100, 0, 80, 640, 80}, // textButton
+    {80, 500, 80, 80}, // buttonNew
+    {180, 500, 80, 80}, // buttonDelete
 };
 
 UIField uiField = {
-
+    {20, 560}, // textTutorial
+    {740, 20, 40, 40}, // buttonMenu
 };
 
 UIMenu uiMenu = {
@@ -28,5 +39,5 @@ UIMenu uiMenu = {
     {180, 360}, // textSave
     {160, 420, 480, 80}, // buttonQuit
     {180, 440}, // textQuit
-    {80, 180, 80, 80, 0, 80}, // arrow
+    {80, 180, 0, 80, 80, 80}, // arrow
 };

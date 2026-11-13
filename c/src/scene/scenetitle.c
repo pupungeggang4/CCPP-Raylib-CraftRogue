@@ -25,7 +25,7 @@ void sceneTitleRender(GameVar* gameVar) {
     drawRect(uiTitle.buttonQuit, YELLOW);
     drawText("Quit Game", uiTitle.textQuit, 20, BLACK);
 
-    int pos[2] = {uiTitle.arrow[0], uiTitle.arrow[1] + uiTitle.arrow[5] * gameVar->selectedTitle};
+    int pos[2] = {uiTitle.arrow[0], uiTitle.arrow[1] + uiTitle.arrow[3] * gameVar->selectedTitle};
     drawTexture(asset.texture[T_ARROW], pos);
 }
 

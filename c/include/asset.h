@@ -3,6 +3,8 @@
 
 #include "includes.h"
 
+enum TextureIndex {T_ARROW, T_BACK, T_MENU, T_ADD, T_DELETE};
+
 struct Asset {
     Texture2D texture[100];
 };
